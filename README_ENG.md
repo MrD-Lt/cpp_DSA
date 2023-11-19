@@ -4,7 +4,7 @@
 
 cpp_DSA is a C++ project focused on implementing fundamental data structures and basic algorithms. 
 
-[阅读中文版](README_CN.md)
+[阅读中文版](README.md)
 
 ## Goals
 
