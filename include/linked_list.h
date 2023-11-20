@@ -66,6 +66,19 @@ public:
         return result;
     }
 
+    bool operator==(const LinkedList& other) {
+        if (this->length != other.length) return false;
+        auto curr_this = this->head;
+        auto curr_other = other.head;
+        while (curr_this != nullptr) {
+            //if (&curr_this != &curr_other) return false;
+            if (curr_this->val != curr_other->val) return false;
+            curr_this = curr_this->next;
+            curr_other = curr_other->next;
+        }
+        return true;
+    }
+
     void append(double val) {
         auto to_append = new ListNode(val);
         if (this->tail == nullptr) { 
