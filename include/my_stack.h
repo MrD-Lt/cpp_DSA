@@ -1,7 +1,7 @@
 #ifndef MY_STACK_H_
 #define MY_STACK_H_
 
-#include <string.h>
+#include <cstring>
 #include <iostream>
 
 class MyStack {

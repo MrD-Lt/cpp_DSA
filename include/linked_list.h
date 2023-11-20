@@ -44,12 +44,42 @@ public:
         this->tail = curr_new;
     }
 
+    LinkedList(LinkedList&& rother) noexcept : head(rother.head), tail(rother.tail), length(rother.length) {
+        rother.head = nullptr;
+        rother.tail = nullptr;
+        rother.length = 0;
+    }
+
+
     LinkedList& operator=(LinkedList other) { 
         std::swap(head, other.head); 
         std::swap(tail, other.tail); 
         std::swap(length, other.length); 
         return *this;
     }
+
+    LinkedList& operator=(LinkedList&& rother) {
+        if (this != &rother) {
+            ListNode* current = this->head;
+            while (current != nullptr) {
+                ListNode* next = current->next;
+                delete current;
+                current = next;
+            } 
+
+            this->head = rother.head;
+            this->tail = rother.tail;
+            this->length = rother.length;
+
+            rother.head = nullptr;
+            rother.tail = nullptr;
+            rother.length = 0;
+        }
+        return *this;
+    }
+
+
+
 
     LinkedList operator+(const LinkedList& head_to_add) {
         LinkedList result;
@@ -104,7 +134,7 @@ public:
     int size() {return this->length;};
 
     ~LinkedList() {
-        ListNode* curr = this->head;
+        auto curr = this->head;
         while (curr != nullptr) {
             auto next_node = curr->next;
             delete curr;
