@@ -66,7 +66,7 @@ public:
         return result;
     }
 
-    bool operator==(const LinkedList& other) {
+    bool operator==(const LinkedList& other) const{
         if (this->length != other.length) return false;
         auto curr_this = this->head;
         auto curr_other = other.head;
