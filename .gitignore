@@ -35,6 +35,7 @@
 *.swp
 *.*~
 .*~
+.DS_Store
 
 #Vscode
 .vscode

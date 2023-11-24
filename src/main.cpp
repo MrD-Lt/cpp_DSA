@@ -1,17 +1,18 @@
-#include "../include/linked_list.h"
-#include "../include/my_stack.h"
+#include "../include/my_dsa.h"
 #include <iostream>
 
 using namespace std;
 
+// g++ -std=c++20 main.cpp  
+
 int main() {
     int test_case = 0;
     cin >> test_case;
-    LinkedList ll1({1,2,3,4,5,6,7,8,9,10});
-    LinkedList ll2({1,2,3,4,5,6,7,8,9,10});
+    mydsa::LinkedList ll1({1,2,3,4,5,6,7,8,9,10});
+    mydsa::LinkedList ll2({1,2,3,4,5,6,7,8,9,10});
 
-    MyStack st1({1,2,3,4,5,6,7,8,9,10});
-    MyStack st2({1,2,3,4,5,6,7,8,9,10});
+    mydsa::MyStack st1({1,2,3,4,5,6,7,8,9,10});
+    mydsa::MyStack st2({1,2,3,4,5,6,7,8,9,10});
     
     switch (test_case) {
         case 1:

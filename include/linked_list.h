@@ -4,6 +4,8 @@
 #ifndef LINKED_LIST_H_
 #define LINKED_LIST_H_
 
+namespace mydsa {
+
 class LinkedList{
 private:
     int length;
@@ -15,6 +17,7 @@ public:
     LinkedList(std::initializer_list<double> ilist) : head(nullptr), tail(nullptr), length(0) {
         for (double val : ilist) {append(val);}
     }
+    
     LinkedList(ListNode* node): head(nullptr), tail(nullptr), length(0) {
         auto curr = node;
         ListNode* last = nullptr;
@@ -28,6 +31,7 @@ public:
             curr = curr->next;
         }
     }
+
     LinkedList(const LinkedList& other) : head(nullptr), tail(nullptr), length(0) {
         if (other.head == nullptr) {return;}
         auto curr_other = other.head;
@@ -143,4 +147,5 @@ public:
     }
 };
 
+}
 #endif

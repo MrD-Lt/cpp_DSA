@@ -4,6 +4,9 @@
 #include <cstring>
 #include <iostream>
 
+
+namespace mydsa {
+
 class MyStack {
 private:
     double* arr;    
@@ -100,5 +103,9 @@ public:
     }
 
 };
+
+    
+}
+
 
 #endif
