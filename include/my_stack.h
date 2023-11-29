@@ -5,6 +5,10 @@
 #include <iostream>
 
 
+/**
+ * @namespace mydsa
+ * @brief Namespace for the custom data structures and algorithms library.
+ */
 namespace mydsa {
 
 class MyStack {

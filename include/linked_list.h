@@ -1,9 +1,14 @@
-#include <algorithm>
-#include <iostream>
-#include "listnode.h"
 #ifndef LINKED_LIST_H_
 #define LINKED_LIST_H_
 
+#include <iostream>
+#include "utils.h"
+#include "listnode.h"
+
+/**
+ * @namespace mydsa
+ * @brief Namespace for the custom data structures and algorithms library.
+ */
 namespace mydsa {
 
 class LinkedList{
@@ -56,9 +61,9 @@ public:
 
 
     LinkedList& operator=(LinkedList other) { 
-        std::swap(head, other.head); 
-        std::swap(tail, other.tail); 
-        std::swap(length, other.length); 
+        swap(head, other.head); 
+        swap(tail, other.tail); 
+        swap(length, other.length); 
         return *this;
     }
 
@@ -145,6 +150,33 @@ public:
             curr = next_node;
         }
     }
+
+    class Iterator {
+    private:
+        ListNode* curr;
+    public:
+        Iterator(ListNode* node) : curr(node) {}
+
+        double& operator*() const {return curr->val;}
+        Iterator& operator++() {
+            curr = curr->next;
+            return *this;
+        }
+        Iterator operator++(int) {
+            auto temp = *this;
+            ++(*this);
+            return temp;
+        }
+        bool operator==(const Iterator& other) const {
+            return curr == other.curr;
+        }
+        bool operator!=(const Iterator& other) const {
+            return curr != other.curr;
+        }
+    };
+
+    Iterator begin() {return Iterator(head);}
+    Iterator end() {return Iterator(nullptr);}
 };
 
 }

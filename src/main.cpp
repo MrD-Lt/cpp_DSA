@@ -29,6 +29,16 @@ int main() {
             cout << "ll2: ";
             ll2.printlist();
 
+            // test Iterator
+            for (auto it = ll1.begin(); it != ll1.end(); it++) {
+                cout << *it << " ";
+            }
+            cout << endl;
+            // test min
+            cout << min<double>({1,2,3,4,0.5,6,7,8,9,10}) << endl;
+            // test max
+            cout << max<double>({1,2,3,4,0.5,6,7,8,9,10}) << endl;
+            cout << endl;
             break;
         
         case 2:
