@@ -3,11 +3,10 @@
 
 using namespace std;
 
-// g++ -std=c++20 main.cpp  
+// g++ -std=c++20 -g -o main main.cpp  
 
 int main() {
-    int test_case = 0;
-    cin >> test_case;
+    int test_case = 1;
     mydsa::LinkedList ll1({1,2,3,4,5,6,7,8,9,10});
     mydsa::LinkedList ll2({1,2,3,4,5,6,7,8,9,10});
 
@@ -39,6 +38,8 @@ int main() {
             // test max
             cout << max<double>({1,2,3,4,0.5,6,7,8,9,10}) << endl;
             cout << endl;
+            reverse(ll1);
+            ll1.printlist();
             break;
         
         case 2:

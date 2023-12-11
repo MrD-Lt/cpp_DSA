@@ -87,9 +87,6 @@ public:
         return *this;
     }
 
-
-
-
     LinkedList operator+(const LinkedList& head_to_add) {
         LinkedList result;
         ListNode* curr = this->head;
