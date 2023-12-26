@@ -37,11 +37,10 @@
 .*~
 .DS_Store
 
-
-
 #Vscode
 .vscode
 main.dSYM
 build
 
+#Jupyter
 .ipynb_checkpoints
