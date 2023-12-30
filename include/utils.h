@@ -2,6 +2,8 @@
 #define UTILS_H_
 
 #include <initializer_list>
+#include <iostream>
+
 
 /**
  * @namespace mydsa
@@ -10,6 +12,33 @@
  * This namespace contains various utility functions and templates for data structures and algorithms.
  */
 namespace mydsa {
+
+template<typename ForwardIterator>
+ForwardIterator max_element(ForwardIterator first, ForwardIterator last) {
+    if (first == last) return last;
+    ForwardIterator max_ele = first;
+    first++;
+    for (; first != last; first++) {
+        if (*max_ele < *first) {
+            max_ele = first;
+        }
+    }
+    return max_ele;
+}
+
+template<typename ForwardIterator>
+ForwardIterator min_element(ForwardIterator first, ForwardIterator last) {
+    if (first == last) return last;
+    ForwardIterator min_ele = first;
+    first++;
+    while (first != last) {
+        if (*min_ele > *first) {
+            min_ele = first;
+        }
+        first++;
+    }
+    return min_ele;
+}
 
 template <typename T>
 void swap(T& a, T& b) {
@@ -57,31 +86,12 @@ T& reverse(T& input) {
     return input;
 }
 
-template<typename ForwardIterator>
-ForwardIterator max_element(ForwardIterator first, ForwardIterator last) {
-    if (first == last) return last;
-    ForwardIterator max_ele = first;
-    first++;
-    for (; first != last; first++) {
-        if (*max_ele < *first) {
-            max_ele = first;
-        }
+template<typename T>
+void print(const T& input) {
+    for (auto it = input.begin(); it != input.end(); it++) {
+        std::cout << *it << " ";
     }
-    return max_ele;
-}
-
-template<typename ForwardIterator>
-ForwardIterator min_element(ForwardIterator first, ForwardIterator last) {
-    if (first == last) return last;
-    ForwardIterator min_ele = first;
-    first++;
-    while (first != last) {
-        if (*min_ele > *first) {
-            min_ele = first;
-        }
-        first++;
-    }
-    return min_ele;
+    std::cout << std::endl;
 }
 
 }
