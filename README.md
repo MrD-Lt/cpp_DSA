@@ -1,29 +1,29 @@
-# cpp_DSA (C++ 数据结构与算法)
+# cpp_DSA (C++ Data Structures and Algorithms)
 
-## 项目简介
+## Description
 
-cpp_DSA 是一个专注于实现基本数据结构和基础算法的简单 C++ 练习项目。
+cpp_DSA is a C++ project focused on implementing fundamental data structures and basic algorithms. 
 
-[Read the English version](README_ENG.md)
+[阅读中文版](README_SCH.md)
 
-## 目标
+## Goals
 
-- 实现链表、栈、队列、二叉树等基本数据结构。
-- 实现基本排序和搜索算法。
+- In-depth understanding and implementation of basic data structures such as linked lists, stacks, queues, binary trees, etc.
+- Explore and implement basic sorting and searching algorithms.
 
-## 项目结构
+## Project Structure
 
-- `src/`: 包含所有源代码文件。
-- `include/`: 包含所有头文件。
-- `tests/`: 包含单元测试。
-- `docs/`: 项目文档和额外的资源。
+- `src/`: Contains all source code files.
+- `include/`: Contains all header files.
+- `tests/`: Contains unit tests.
+- `docs/`: Project documentation and additional resources.
 
-## 贡献与讨论
+## Contribute
 
-欢迎任何形式的贡献与讨论。
+Contributions of any kind are welcome.
 
-## 许可
+## License
 
-该项目在 MIT 许可下发布。有关更多信息，请参阅 `LICENSE` 文件。
+This project is released under the MIT License. For more information, please refer to the `LICENSE` file.
 
-2023年11月19日
+19th Nov. 2023

@@ -90,6 +90,96 @@ void selection_sort(T& nums, Compare comp) {
     }
 }
 
+/*
+Insertion sort
+Time Complexity: 
+    Best: O(n)
+    Average: O(n^2)
+    Worst: O(n^2)
+Space Complexity: O(1)
+Stable: Yes
+*/
+
+template<typename T>
+void insertion_sort(T& nums) {
+    int n = nums.size();
+    for (int i = 1; i < n; i++) {
+        int j = i - 1;
+        int key = nums[i];
+        while (j >= 0 && nums[j] > key) {
+            nums[j+1] = nums[j];
+            j--;
+        }
+        nums[j+1] = key;
+    }
+}
+
+template<typename T, typename Compare>
+void insertion_sort(T& nums, Compare comp) {
+    int n = nums.size();
+    for (int i = 1; i < n; i++) {
+        int j = i - 1;
+        int key = nums[i];
+        while (j >= 0 && comp(nums[j], key)) {
+            nums[j+1] = nums[j];
+            j--;
+        }
+        nums[j+1] = key;
+    }
+}
+
+/*
+Shell sort
+Time Complexity: 
+    Best: O(n)
+    Average/Worst: O(nlogn^2) O(n^2)
+Space Complexity: O(1)
+Stable: No
+*/
+
+template<typename T>
+void shell_sort(T& nums) {
+    int n = nums.size();
+    int gap = n / 2;
+    while (gap > 0) {
+        for (int i = gap; i < n; i++) {
+            int curr = nums[i];
+            int prev_index = i - gap;
+            while (prev_index >= 0 && nums[prev_index] > curr) {
+                nums[prev_index + gap] = nums[prev_index];
+                prev_index -= gap;
+            }
+            nums[prev_index + gap] = curr;
+        }
+        gap /= 2;
+    }
+}
+
+template<typename T, typename Compare>
+void shell_sort(T& nums, Compare comp) {
+    int n = nums.size();
+    int gap = n / 2;
+    while (gap > 0) {
+        for (int i = gap; i < n; i++) {
+            int curr = nums[i];
+            int prev_index = i - gap;
+            while (prev_index >= 0 && comp(nums[prev_index], curr)) {
+                nums[prev_index + gap] = nums[prev_index];
+                prev_index -= gap;
+            }
+            nums[prev_index + gap] = curr;
+        }
+        gap /= 2;
+    }
+}
+
+/*
+Merge sort
+Time Complexity: 
+    Best/Average/Worst: O(nlogn)
+Space Complexity: O(n)
+Stable: Yes
+*/
 
 }
 #endif
