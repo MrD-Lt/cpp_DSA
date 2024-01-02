@@ -5,6 +5,7 @@
 using namespace std;
 
 // g++ -std=c++20 -g -o main main.cpp  
+// valgrind --leak-check=full ./main
 
 int main() {
     int test_case = 1;
