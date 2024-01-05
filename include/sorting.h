@@ -180,6 +180,59 @@ Time Complexity:
 Space Complexity: O(n)
 Stable: Yes
 */
+template<typename T>
+void merge(T& nums, const int start, const int mid, const int end) {
+    T temp(end - start + 1);
+    int i = start, j = mid+1, k = 0;
+    while (i <= mid && j <= end) {
+        if (nums[i] < nums[j]) temp[k++] = nums[i++];
+        else temp[k++] = nums[j++];
+    }
+    while (i <= mid) temp[k++] = nums[i++];
+    while (j <= end) temp[k++] = nums[j++];
+    for (i = start, k = 0; i <= end; ++i, ++k) nums[i] = temp[k];
+}
+
+template<typename T>
+void merge_sort(T& nums, const int start, const int end) {
+    if (start >= end) return;
+    int mid = start + (end - start) / 2;
+    merge_sort(nums, start, mid);
+    merge_sort(nums, mid + 1, end);
+    merge(nums, start, mid, end);
+}
+
+template<typename T, typename Compare>
+void merge(T& nums, const int start, const int mid, const int end, Compare comp) {
+    T temp(end - start + 1);
+    int i = start, j = mid + 1, k = 0;
+    while (i <= mid && j <= end) {
+        if (comp(nums[i], nums[j])) temp[k++] = nums[i++];
+        else temp[k++] = nums[j++];
+    }
+    while (i <= mid) temp[k++] = nums[i++];
+    while (j <= end) temp[k++] = nums[j++];
+    for (i = start, k = 0; i <= end; ++i, ++k) nums[i] = temp[k];
+}
+
+template<typename T, typename Compare>
+void merge_sort(T& nums, const int start, const int end, Compare comp) {
+    if (start >= end) return;
+    int mid = start + (end - start) / 2;
+    merge_sort(nums, start, mid, comp);
+    merge_sort(nums, mid + 1, end, comp);
+    merge(nums, start, mid, end, comp);
+}
+
+/*
+Quick sort
+Time Complexity: 
+    Best/Average: O(nlogn)
+    Worst: O(n^2)
+Space Complexity: O(1)
+Stable: No
+*/
+
 
 }
 #endif
